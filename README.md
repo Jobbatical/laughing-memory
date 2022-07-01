@@ -9,7 +9,7 @@ This challenge addresses a web application with a microservice architecture to c
 - The application contains 3 microservices
 - Each microservice takes care of only one arithmetic operation
 - The microservices take inputs from the URL query form and return the result in JSON format
-- The microservices are not stable and can stop serving requests
+- The microservices are not stable and can stop serving requests. Randomly we throw errors in the code, don't modify the error logic. Rather handle the app to catch and make sure the POD is running fine.
 
 ## Services:
 
@@ -38,14 +38,14 @@ curl http://127.0.0.1:3000/calc?vf=200&vi=5&t=123
 
 - Write the necessary Kubernetes deployment and service files that can be used to create the full application, running 2 instances of each microservice.
 - Only `/calc` of `acceleration-calc` microservices can be available outside of the kubernetes cluster.
-- Run the application on a kubernetes cluster like Kind or Minikube or Docker for Mac.
+- Run the application on a local kubernetes cluster (Kind or Minikube or Docker for Mac) or cloud kubernetes cluster (GCP, Digital Ocean or AWS).
 - Make sure the application is stable.
 - Please do not change a code in services.
 - **Bonus:** You can deploy to cloud of your choice (GCP or DO preferred)
 - **Bonus:** You can create a CI/CD pipeline to deploy the application to the cloud.
 - **Bonus:** You can create terraform files to spin up the local/cloud cluster and deploy the application.
 - **Bonus:** You can use tools like Helm to reduce the boilerplate
-- Your solution must work on Mac, Windows and Linux machines
+- Your solution must work on Mac, Windows and Linux machines (Docker will help here)
 
 # Environment Setup
 
